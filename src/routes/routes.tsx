@@ -1,16 +1,25 @@
 import { Route } from '@tanstack/react-location';
-import { EmployeesPage, Homepage, RegistrationPage } from '../pages';
+import { AccountPage, EmployeesPage, GoalsPage, Homepage, RegistrationPage } from '../pages';
+import { ROUTES } from './constants';
 export const routes: Route[] = [
   {
-    path: '/',
+    path: ROUTES.HOMEPAGE,
     element: <Homepage />,
   },
   {
-    path: 'employees',
+    path: ROUTES.EMPLOYEES,
     element: <EmployeesPage />,
   },
   {
-    path: 'registration',
+    path: ROUTES.REGISTRATION,
     element: <RegistrationPage />,
+  },
+  {
+    path: ROUTES.GOALS,
+    element: <GoalsPage />,
+  },
+  {
+    path: ROUTES.ACCOUNT,
+    element: <AccountPage />,
   },
 ];

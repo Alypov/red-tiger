@@ -1,0 +1,16 @@
+.userProfileImage {
+  position: relative;
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.onlineStatus {
+  position: absolute;
+  right: 3px;
+  background-color: green;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
