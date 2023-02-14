@@ -1,0 +1,18 @@
+@import './variables.module.scss';
+
+$theme-colors: (
+  primeLight: $polynesian-blue,
+  primeDark: $oxford-blue,
+  secondaryLight: $jordy-blue,
+  secondaryDark: $celtic-blue,
+  successLight: $yellow-green,
+  successDark: $asparagus,
+  errorLight: $off-red,
+  errorDark: $penn-red,
+);
+
+:export {
+  @each $key, $value in $theme-colors {
+    #{unquote($key)}: $value;
+  }
+}
