@@ -13,19 +13,19 @@ import { theme } from './shared';
 function App() {
   const location = new ReactLocation();
   const queryClient = new QueryClient();
-  const navBarLinks: ReactNode[] = [<Link to={ROUTES.GOALS}>GOALS</Link>, <Link to={ROUTES.EMPLOYEES}>ALL EMPLOYEES</Link>, <Link to={ROUTES.ACCOUNT}>ACCOUNT</Link>];
+  const navBarLinks: ReactNode[] = [<Link to={ROUTES.CANDIDATES}>CANDIDATES</Link>, <Link to={ROUTES.EMPLOYEES}>ALL EMPLOYEES</Link>, <Link to={ROUTES.ACCOUNT}>ACCOUNT</Link>];
   const headerLeftSection = <MainLogo />;
   const headerRightSection = <HeaderCurrentUser />;
   return (
     <QueryClientProvider client={queryClient}>
       <Router location={location} routes={routes}>
-        <div className='App'>
-          <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          <div className='App'>
             <Header leftSection={headerLeftSection} rightSection={headerRightSection} />
             <NavBar links={navBarLinks} />
             <Outlet />
-          </ThemeProvider>
-        </div>
+          </div>
+        </ThemeProvider>
       </Router>
     </QueryClientProvider>
   );

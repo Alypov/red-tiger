@@ -1,7 +1,5 @@
 export const ROUTES = {
-  HOMEPAGE: 'homepage',
+  CANDIDATES: 'candidates',
   EMPLOYEES: 'employees',
-  REGISTRATION: 'registration',
-  GOALS: 'goals',
   ACCOUNT: 'account',
 };
