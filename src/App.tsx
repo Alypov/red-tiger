@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@mui/material/styles';
 import { Link, Outlet, ReactLocation, Router } from '@tanstack/react-location';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { ReactNode } from 'react';
@@ -7,6 +8,7 @@ import { MainLogo, NavBar, Header, HeaderCurrentUser } from './components';
 
 import { routes } from './routes';
 import { ROUTES } from './routes/constants';
+import { theme } from './shared';
 
 function App() {
   const location = new ReactLocation();
@@ -18,9 +20,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router location={location} routes={routes}>
         <div className='App'>
-          <Header leftSection={headerLeftSection} rightSection={headerRightSection} />
-          <NavBar links={navBarLinks} />
-          <Outlet />
+          <ThemeProvider theme={theme}>
+            <Header leftSection={headerLeftSection} rightSection={headerRightSection} />
+            <NavBar links={navBarLinks} />
+            <Outlet />
+          </ThemeProvider>
         </div>
       </Router>
     </QueryClientProvider>
