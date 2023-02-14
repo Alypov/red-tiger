@@ -1,14 +1,28 @@
 import { createTheme } from '@mui/material';
 import { orange } from '@mui/material/colors';
+import colors from './theme-colors.module.scss';
 
 export const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: orange[500],
-      light: orange[400],
+      main: colors.primeLight,
+      dark: colors.primeDark,
+    },
+    secondary: {
+      main: colors.secondaryLight,
+      dark: colors.secondaryDark,
+    },
+    success: {
+      main: colors.successLight,
+      dark: colors.successDark,
+    },
+    error: {
+      main: colors.errorLight,
+      dark: colors.errorDark,
     },
   },
+
   components: {
     MuiButton: {
       defaultProps: {
