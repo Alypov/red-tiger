@@ -1,0 +1,82 @@
+export const mockCandidates = [
+  { name: 'John', lastName: 'Doe', createdAt: '', Contact: '999-302-33-44', Email: 'johhny@mail.com', followUpResults: [{ createdAt: '', result: 'Not interested' }] },
+  { name: 'Mary', lastName: 'Moser', createdAt: '', Contact: '923-312-76-41', Email: 'marrym@mail.com', followUpResults: [{ createdAt: '', result: 'Asked to call back later' }] },
+  { name: 'Elijah', lastName: 'Cruz', createdAt: '', Contact: '902-304-99-16', Email: 'e.cruz@mail.com', followUpResults: [{ createdAt: '', result: 'No response' }] },
+  { name: 'Liam', lastName: 'Morales', createdAt: '', Contact: '111-334-99-16', Email: 'morales22@mail.com', followUpResults: [{ createdAt: '', result: 'Sceduled for interview' }] },
+];
+
+export const mockEmployees = [
+  {
+    name: 'Tom',
+    lastName: 'Carr',
+    userImage: '',
+    dob: '11/01/1989',
+    city: 'Kyiv',
+    email: 'tomcarr@mail.com',
+    contact: '111-334-99-16',
+    emergencyContact: { name: 'Arnold', contact: '111-334-99-16', relation: 'Friend' },
+    position: 'manager',
+    initialHireDate: '',
+    terminationDate: '',
+  },
+  {
+    name: 'Lucas',
+    lastName: 'Yen',
+    userImage: '',
+    dob: '23/01/1989',
+    city: 'Odessa',
+    email: 'lucas13@mail.com',
+    contact: '121-324-99-36',
+    emergencyContact: { name: 'Tina', contact: '113-334-99-16', relation: 'Spouse' },
+    position: 'dispatch',
+    initialHireDate: '',
+    terminationDate: '',
+  },
+  {
+    name: 'Andy',
+    lastName: 'Paz',
+    userImage: '',
+    dob: '23/01/1999',
+    city: 'Odessa',
+    email: 'andy123@mail.com',
+    contact: '321-324-99-36',
+    emergencyContact: { name: 'Ronald', contact: '133-334-99-16', relation: 'Father' },
+    position: 'customer support',
+    initialHireDate: '',
+    terminationDate: '',
+  },
+  {
+    name: 'Amy',
+    lastName: 'Nickel',
+    userImage: '',
+    dob: '23/01/1993',
+    city: 'Kyiv',
+    email: 'amyyy2@mail.com',
+    contact: '421-324-99-36',
+    emergencyContact: { name: 'Natan', contact: '133-354-99-16', relation: 'Brother' },
+    position: 'sales',
+    initialHireDate: '',
+    terminationDate: '',
+  },
+  {
+    name: 'Stanley',
+    lastName: 'Forbs',
+    userImage: '',
+    dob: '31/04/1993',
+    city: 'Lviv',
+    email: 'staan88@mail.com',
+    contact: '421-324-99-36',
+    emergencyContact: { name: 'Nancy', contact: '133-354-99-16', relation: 'Spouse' },
+    position: 'sales',
+    initialHireDate: '',
+    terminationDate: '',
+  },
+];
+
+export const mockAccounts = [
+  { name: 'Notebooks', category: 'Office goods', createdAt: '', budget: '1000', spend: '600', rest: '400' },
+  { name: '5 LG displays', category: 'Office assets', createdAt: '', budget: '13000', spend: '12800', rest: '200' },
+  { name: '1 kg Coffee', category: 'Provision', createdAt: '', budget: '300', spend: '300', rest: '0' },
+];
+
+export const mockUser = { name: 'RodneyHr', createdAt: '', role: 'hr' };
