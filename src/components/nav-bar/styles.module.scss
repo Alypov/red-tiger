@@ -1,0 +1,9 @@
+@import '../../shared/styles/variables.module.scss';
+
+.mainWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 3rem;
+  background-color: $tickle-me-pink;
+}

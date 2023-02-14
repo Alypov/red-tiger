@@ -5,7 +5,7 @@ export const Homepage = () => {
     <div>
       Homepage
       <div>
-        <Button />
+        <Button color='primary' text='HOME' />
       </div>
     </div>
   );

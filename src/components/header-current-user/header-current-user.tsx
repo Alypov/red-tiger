@@ -1,3 +1,4 @@
+import { Button } from '../../ui';
 import { UserProfileImage } from '../user-profile-image';
 import styles from './styles.module.scss';
 export const HeaderCurrentUser = () => {
@@ -6,7 +7,7 @@ export const HeaderCurrentUser = () => {
       <UserProfileImage userImage='https://miro.medium.com/max/1396/1*njwXqsShWvK81ANQCMBevw.jpeg' />
       <div>
         <div>User name</div>
-        <div>SIGN OUT button</div>
+        <Button color='primary' text='Sign out' />
       </div>
     </div>
   );
