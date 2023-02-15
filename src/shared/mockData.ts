@@ -1,8 +1,8 @@
 export const mockCandidates = [
-  { name: 'John', lastName: 'Doe', createdAt: '', Contact: '999-302-33-44', Email: 'johhny@mail.com', followUpResults: [{ createdAt: '', result: 'Not interested' }] },
-  { name: 'Mary', lastName: 'Moser', createdAt: '', Contact: '923-312-76-41', Email: 'marrym@mail.com', followUpResults: [{ createdAt: '', result: 'Asked to call back later' }] },
-  { name: 'Elijah', lastName: 'Cruz', createdAt: '', Contact: '902-304-99-16', Email: 'e.cruz@mail.com', followUpResults: [{ createdAt: '', result: 'No response' }] },
-  { name: 'Liam', lastName: 'Morales', createdAt: '', Contact: '111-334-99-16', Email: 'morales22@mail.com', followUpResults: [{ createdAt: '', result: 'Sceduled for interview' }] },
+  { name: 'John Doe', contact: '999-302-33-44', email: 'johhny@mail.com' },
+  { name: 'Mary Moser', contact: '923-312-76-41', email: 'marrym@mail.com' },
+  { name: 'Elijah Cruz', contact: '902-304-99-16', email: 'e.cruz@mail.com' },
+  { name: 'Liam Morales', contact: '111-334-99-16', email: 'morales22@mail.com' },
 ];
 
 export const mockEmployees = [
