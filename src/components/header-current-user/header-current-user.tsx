@@ -7,7 +7,7 @@ export const HeaderCurrentUser = () => {
       <UserProfileImage userImage='https://miro.medium.com/max/1396/1*njwXqsShWvK81ANQCMBevw.jpeg' />
       <div>
         <div>User name</div>
-        <Button color='secondary' text='Sign out' />
+        <Button onClick={() => console.log('SIGN OUT')} color='secondary' text='Sign out' />
       </div>
     </div>
   );

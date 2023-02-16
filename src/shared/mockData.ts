@@ -1,8 +1,8 @@
 export const mockCandidates = [
-  { name: 'John Doe', contact: '999-302-33-44', email: 'johhny@mail.com' },
-  { name: 'Mary Moser', contact: '923-312-76-41', email: 'marrym@mail.com' },
-  { name: 'Elijah Cruz', contact: '902-304-99-16', email: 'e.cruz@mail.com' },
-  { name: 'Liam Morales', contact: '111-334-99-16', email: 'morales22@mail.com' },
+  { id: '1', name: 'John Doe', contact: '999-302-33-44', email: 'johhny@mail.com' },
+  { id: '2', name: 'Mary Moser', contact: '923-312-76-41', email: 'marrym@mail.com' },
+  { id: '3', name: 'Elijah Cruz', contact: '902-304-99-16', email: 'e.cruz@mail.com' },
+  { id: '4', name: 'Liam Morales', contact: '111-334-99-16', email: 'morales22@mail.com' },
 ];
 
 export const mockEmployees = [
