@@ -2,6 +2,7 @@ import { Paper, Table as MaterialTable, TableBody, TableCell, TableContainer, Ta
 import { memo, useState } from 'react';
 import { candidate } from '../../shared';
 import { Button, Modal } from '../../ui';
+import { CreateUpdateCandidate } from '../create-update-candidate';
 
 export type table = {
   tableMinWidth: number;
@@ -11,6 +12,19 @@ export type table = {
 
 export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [candidateData, setCandidateData] = useState<candidate>({ id: '', name: '', contact: '', email: '' });
+
+  const editRow = (row: candidate) => {
+    setIsOpen(true);
+    setCandidateData({
+      id: row.id,
+      name: row.name,
+      contact: row.contact,
+      email: row.email,
+      followUpResults: [{ createdAt: '11/01/2013', result: 'none' }],
+    });
+  };
+
   const getKeys = (rows: candidate[]) => {
     return Object.keys(rows);
   };
@@ -31,7 +45,7 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
       <TableRow key={row.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
         {result}
         <TableCell align='right'>
-          <Button onClick={() => setIsOpen(true)} color='secondary' text='EDIT' />
+          <Button onClick={() => editRow(row)} color='secondary' text='EDIT' />
         </TableCell>
       </TableRow>
     );
@@ -39,8 +53,8 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
 
   return (
     <>
-      <Modal  isOpen={isOpen} setIsOpen={setIsOpen}>
-        123123123123
+      <Modal actions isOpen={isOpen} setIsOpen={setIsOpen}>
+        <CreateUpdateCandidate data={candidateData} />
       </Modal>
       <TableContainer component={Paper}>
         <MaterialTable sx={{ minWidth: tableMinWidth }}>

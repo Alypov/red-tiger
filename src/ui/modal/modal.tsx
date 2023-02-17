@@ -1,5 +1,5 @@
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import React from 'react';
 import { Button } from '../button';
 
 type modal = {

@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
 
-export const Input = ({ name }: any) => {
-  return <TextField name={name} />;
+export const Input = ({ name, defaultValue }: any) => {
+  return <TextField defaultValue={defaultValue} name={name} />;
 };

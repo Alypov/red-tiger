@@ -1,4 +1,5 @@
 export type candidate = {
+  id: string;
   name: string;
   createdAt?: string;
   contact: string;
@@ -6,7 +7,7 @@ export type candidate = {
   followUpResults?: followUpResults[];
 };
 
-type followUpResults = {
+export type followUpResults = {
   createdAt: string;
-  result: string;
+  result: string | undefined;
 };
