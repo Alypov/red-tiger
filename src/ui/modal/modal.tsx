@@ -20,14 +20,20 @@ export const Modal = ({ isOpen, title, setIsOpen, children, actions, onSubmitHan
     <div>
       <Dialog onClose={onCloseModalHandler} open={isOpen}>
         <DialogTitle>{title}</DialogTitle>
-
-        <DialogContent>{children}</DialogContent>
-        {actions ? (
-          <DialogActions>
-            <Button onClick={() => setIsOpen(!isOpen)} color='secondary' text='CANCEL' />
-            <Button onClick={onSubmitHandler} color='primary' text='SAVE' />
-          </DialogActions>
-        ) : null}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log({ name: e.target.name.value, contact: e.target.contact.value, email: e.target.email.value, notes: e.target.notes.value });
+          }}
+        >
+          <DialogContent>{children}</DialogContent>
+          {actions ? (
+            <DialogActions>
+              <Button onClick={() => setIsOpen(!isOpen)} color='secondary' text='CANCEL' />
+              <Button type='submit' onClick={onSubmitHandler} color='primary' text='SAVE' />
+            </DialogActions>
+          ) : null}
+        </form>
       </Dialog>
     </div>
   );
