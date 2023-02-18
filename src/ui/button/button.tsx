@@ -4,11 +4,12 @@ type button = {
   color: 'primary' | 'secondary' | 'warning' | 'success' | 'error' | 'info' | 'inherit';
   text: string;
   onClick?: () => void;
+  type?: 'button' | 'reset' | 'submit';
 };
 
-export const Button = ({ color, text, onClick }: button) => {
+export const Button = ({ type, color, text, onClick }: button) => {
   return (
-    <MaterialButton onClick={onClick} color={color} variant='contained'>
+    <MaterialButton type={type} onClick={onClick} color={color} variant='contained'>
       {text}
     </MaterialButton>
   );
