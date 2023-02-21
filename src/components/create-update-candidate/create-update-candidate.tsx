@@ -1,4 +1,3 @@
-import { candidate, followUpResults } from '../../shared';
 import { Input } from '../../ui';
 import styles from './styles.module.scss';
 
