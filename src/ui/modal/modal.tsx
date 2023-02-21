@@ -20,12 +20,7 @@ export const Modal = ({ isOpen, title, setIsOpen, children, actions, onSubmitHan
     <div>
       <Dialog onClose={onCloseModalHandler} open={isOpen}>
         <DialogTitle>{title}</DialogTitle>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            console.log({ name: e.target.name.value, contact: e.target.contact.value, email: e.target.email.value, notes: e.target.notes.value });
-          }}
-        >
+        <form onSubmit={onSubmitHandler}>
           <DialogContent>{children}</DialogContent>
           {actions ? (
             <DialogActions>

@@ -3,18 +3,17 @@ import { Input } from '../../ui';
 import styles from './styles.module.scss';
 
 type data = {
-  data: candidate;
+  candidateID?: string;
+  control: any;
 };
 
-export const CreateUpdateCandidate = ({ data }: data) => {
-  const lastNote = data.followUpResults?.map((item: followUpResults) => item.result);
+export const CreateUpdateCandidate = ({ candidateID, control }: data) => {
   return (
     <div className={styles.mainWrapper}>
-      {data.id ? <div>CANDIDATE ID: {data.id}</div> : null}
-      <Input name='name' defaultValue={data.name} />
-      <Input name='contact' defaultValue={data.contact} />
-      <Input name='email' defaultValue={data.email} />
-      <Input name='notes' multiline defaultValue={lastNote} />
+      {candidateID ? <div>CANDIDATE ID: {candidateID}</div> : null}
+      <Input control={control} name='name' />
+      <Input control={control} name='contact' />
+      <Input control={control} name='email' />
     </div>
   );
 };
