@@ -4,15 +4,16 @@ import styles from './styles.module.scss';
 type data = {
   candidateID?: string;
   control: any;
+  errors: any;
 };
 
-export const CreateUpdateCandidate = ({ candidateID, control }: data) => {
+export const CreateUpdateCandidate = ({ candidateID, control, errors }: data) => {
   return (
     <div className={styles.mainWrapper}>
       {candidateID ? <div>CANDIDATE ID: {candidateID}</div> : null}
-      <Input control={control} name='name' />
-      <Input control={control} name='contact' />
-      <Input control={control} name='email' />
+      <Input error={errors} control={control} name='name' />
+      <Input error={errors} control={control} name='contact' />
+      <Input error={errors} control={control} name='email' />
     </div>
   );
 };
