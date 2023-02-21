@@ -1,14 +1,14 @@
 import styles from './styles.module.scss';
-type UserProfileImage = {
+type UserProfileImageProps = {
   userImage: string;
 };
 
-export const UserProfileImage = ({ userImage }: UserProfileImage) => {
+export const UserProfileImage = ({ userImage }: UserProfileImageProps) => {
   const isOnline = true;
   return (
     <div className={styles.userProfileImage}>
       <div className={isOnline ? styles.onlineStatus : ''} />
-      <img src={userImage} width='45px' height='45px' />
+      <img alt='' src={userImage} width='45px' height='45px' />
     </div>
   );
 };

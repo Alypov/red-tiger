@@ -10,7 +10,6 @@ export const CandidatesPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { control, handleSubmit, reset } = useForm({ defaultValues: { id: '', name: '', contact: '', email: '' } });
 
-  const [newCandidateData, setNewCandidateData] = useState({ id: '', name: '', contact: '', email: '' });
 
   const addCandidate = (data: any) => {
     console.log('ADDED', data);
