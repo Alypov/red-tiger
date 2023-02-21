@@ -1,5 +1,6 @@
 import { Paper, Table as MaterialTable, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
 import { memo, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { candidate } from '../../shared';
 import { Button, Modal } from '../../ui';
 import { CreateUpdateCandidate } from '../create-update-candidate';
@@ -12,17 +13,23 @@ export type table = {
 
 export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [candidateData, setCandidateData] = useState<candidate>({ id: '', name: '', contact: '', email: '' });
+  const [candidateID, setCandidateID] = useState('');
+
+  const { handleSubmit, control, reset } = useForm({ defaultValues: { id: '', name: '', contact: '', email: '' } });
 
   const editRow = (row: candidate) => {
     setIsOpen(true);
-    setCandidateData({
+    reset({
       id: row.id,
       name: row.name,
       contact: row.contact,
       email: row.email,
-      followUpResults: [{ createdAt: '11/01/2013', result: 'none' }],
     });
+    setCandidateID(row.id);
+  };
+
+  const updateCandidate = (data: any) => {
+    console.log('data=====>', data);
   };
 
   const getKeys = (rows: candidate[]) => {
@@ -35,7 +42,7 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
     const result = keys.map((item, index) => {
       return (
         <>
-          <TableCell align={index !== 0 ? 'right' : undefined} key={item}>
+          <TableCell key={item} align={index !== 0 ? 'right' : undefined}>
             {row[item]}
           </TableCell>
         </>
@@ -51,10 +58,12 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
     );
   };
 
+ 
+
   return (
     <>
-      <Modal actions isOpen={isOpen} setIsOpen={setIsOpen}>
-        <CreateUpdateCandidate data={candidateData} />
+      <Modal title='EDIT CANDIDATE' onSubmitHandler={handleSubmit(updateCandidate)} actions isOpen={isOpen} setIsOpen={setIsOpen}>
+        <CreateUpdateCandidate control={control} candidateID={candidateID} />
       </Modal>
       <TableContainer component={Paper}>
         <MaterialTable sx={{ minWidth: tableMinWidth }}>
@@ -62,7 +71,7 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
             <TableRow>
               {headCells.map((cell, index): any => {
                 return (
-                  <TableCell align={index !== 0 ? 'right' : undefined} key={cell}>
+                  <TableCell key={cell} align={index !== 0 ? 'right' : undefined}>
                     {cell}
                   </TableCell>
                 );
