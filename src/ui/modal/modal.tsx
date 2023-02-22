@@ -9,16 +9,17 @@ type modal = {
   children: any;
   actions?: boolean;
   onSubmitHandler?: () => void;
+  minWidth?: string;
 };
 
-export const Modal = ({ isOpen, title, setIsOpen, children, actions, onSubmitHandler }: modal) => {
+export const Modal = ({ isOpen, title, setIsOpen, children, actions, onSubmitHandler, minWidth }: modal) => {
   const onCloseModalHandler = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div>
-      <Dialog onClose={onCloseModalHandler} open={isOpen}>
+    <div style={{ minWidth: minWidth }}>
+      <Dialog fullWidth onClose={onCloseModalHandler} open={isOpen}>
         <DialogTitle>{title}</DialogTitle>
         <form onSubmit={onSubmitHandler}>
           <DialogContent>{children}</DialogContent>
