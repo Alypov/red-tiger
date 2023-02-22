@@ -15,7 +15,12 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
   const [isOpen, setIsOpen] = useState(false);
   const [candidateID, setCandidateID] = useState('');
 
-  const { handleSubmit, control, reset } = useForm({ defaultValues: { id: '', name: '', contact: '', email: '' } });
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm({ defaultValues: { id: '', name: '', contact: '', email: '' } });
 
   const editRow = (row: candidate) => {
     setIsOpen(true);
@@ -41,11 +46,11 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
 
     const result = keys.map((item, index) => {
       return (
-        <>
-          <TableCell key={item} align={index !== 0 ? 'right' : undefined}>
-            {row[item]}
-          </TableCell>
-        </>
+        // <React.Fragment key={item}>
+        <TableCell key={item} align={index !== 0 ? 'right' : undefined}>
+          {row[item]}
+        </TableCell>
+        // </React.Fragment>
       );
     });
     return (
@@ -58,12 +63,10 @@ export const Table = memo(({ tableMinWidth, rows, headCells }: table) => {
     );
   };
 
- 
-
   return (
     <>
       <Modal title='EDIT CANDIDATE' onSubmitHandler={handleSubmit(updateCandidate)} actions isOpen={isOpen} setIsOpen={setIsOpen}>
-        <CreateUpdateCandidate control={control} candidateID={candidateID} />
+        <CreateUpdateCandidate errors={errors} control={control} candidateID={candidateID} />
       </Modal>
       <TableContainer component={Paper}>
         <MaterialTable sx={{ minWidth: tableMinWidth }}>

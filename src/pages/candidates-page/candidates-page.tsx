@@ -22,12 +22,11 @@ export const CandidatesPage = () => {
     reset({ id: '', name: '', contact: '', email: '' });
     setIsOpen(false);
   };
-  console.log('errors', errors);
 
   const onOpenOnClickHandler = () => setIsOpen(!isOpen);
   return (
     <div>
-      <Modal onSubmitHandler={handleSubmit(addCandidate)} actions isOpen={isOpen} setIsOpen={setIsOpen} title='ADD CANDIDATE'>
+      <Modal minWidth='500px' onSubmitHandler={handleSubmit(addCandidate)} actions isOpen={isOpen} setIsOpen={setIsOpen} title='ADD CANDIDATE'>
         {<CreateUpdateCandidate errors={errors} control={control} />}
       </Modal>
       <Button color='primary' text='Add' onClick={onOpenOnClickHandler} />
