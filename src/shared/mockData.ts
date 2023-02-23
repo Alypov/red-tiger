@@ -7,6 +7,7 @@ export const mockCandidates = [
 
 export const mockEmployees = [
   {
+    id: '333',
     name: 'Tom',
     lastName: 'Carr',
     userImage: '',
@@ -20,6 +21,7 @@ export const mockEmployees = [
     terminationDate: '',
   },
   {
+    id: '222',
     name: 'Lucas',
     lastName: 'Yen',
     userImage: '',
@@ -33,6 +35,7 @@ export const mockEmployees = [
     terminationDate: '',
   },
   {
+    id: '444',
     name: 'Andy',
     lastName: 'Paz',
     userImage: '',
@@ -46,6 +49,7 @@ export const mockEmployees = [
     terminationDate: '',
   },
   {
+    id: '555',
     name: 'Amy',
     lastName: 'Nickel',
     userImage: '',
@@ -59,6 +63,7 @@ export const mockEmployees = [
     terminationDate: '',
   },
   {
+    id: '313',
     name: 'Stanley',
     lastName: 'Forbs',
     userImage: '',
