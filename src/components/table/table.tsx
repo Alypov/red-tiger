@@ -1,13 +1,13 @@
 import { Paper, Table as MaterialTable, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { memo, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { candidate } from '../../shared';
+import { candidate, employee } from '../../shared';
 import { Button, Modal } from '../../ui';
 import { CreateUpdateCandidate } from '../create-update-candidate';
 
 export type table = {
   tableMinWidth: number;
-  rows: candidate[];
+  rows: candidate[] | employee[];
   headCells: string[];
 };
 
